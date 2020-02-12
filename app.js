@@ -29,14 +29,9 @@ var app = new Vue({
     },
     computed:{
         filteredBooks: function(){
-           
-            return this.books.filter((books)=>{
-                console.log(books.titulo)
-                console.log(this.search)
-                console.log(this.books)
-                return books.titulo.match(this.search)
+           return this.books.filter((books)=>{
+                return books.titulo.toLowerCase().match(this.search.toLowerCase())
             })
-            
         }
     }
   });
